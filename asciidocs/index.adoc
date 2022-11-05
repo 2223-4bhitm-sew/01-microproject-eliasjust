@@ -1,4 +1,54 @@
-= Index page
 ifndef::imagesdir[:imagesdir: images]
 
-image::img.png[]
+= Stadtrundfahrt
+
+[plantuml, class-diagram, svg]
+----
+@startuml
+
+
+class Ticket{
+Ticketstufe
+gultigbis
+preis
+}
+
+class Route{
+dauer
+erstefahrt
+letztefahrt
+stundentaktung
+}
+class Rechnung{
+ermäßigung
+rechnungsdatum
+
+}
+
+class Haltestelle{
+haltestellenname
+}
+class Sehenswürdigkeit{
+sehenswürdigkeitname
+}
+class SehenswürdigkeitLinie{
+
+}
+class HaltestelleLinie{
+
+}
+class Stadt{
+stadtname
+}
+
+Ticket "*" -- "*" Route
+Route "*" -- "1" Stadt
+Route "*" -- "*" Haltestelle
+Route "*" -- "*" Sehenswürdigkeit
+
+
+(Route,Ticket) .. Rechnung
+(Route,Haltestelle) .. HaltestelleLinie
+(Route,Sehenswürdigkeit) .. SehenswürdigkeitLinie
+@enduml
+----
