@@ -5,7 +5,7 @@ ifndef::imagesdir[:imagesdir: images]
 [plantuml, class-diagram, svg]
 ----
 @startuml
-
+left to right direction
 
 class Ticket{
 Ticketstufe
@@ -37,7 +37,7 @@ class SehenswürdigkeitLinie{
 class HaltestelleLinie{
 
 }
-class Stadt{
+class Stadt {
 stadtname
 }
 
