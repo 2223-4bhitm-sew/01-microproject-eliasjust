@@ -44,7 +44,6 @@ Ticket "*" -- "*" Route
 Route "*" -- "*" Haltestelle
 Route "*" -- "*" Sehenswürdigkeit
 
-
 (Route,Haltestelle) .. HaltestelleLinie
 (Route,Sehenswürdigkeit) .. SehenswürdigkeitLinie
 (Route,Ticket) .. TicketRoute
