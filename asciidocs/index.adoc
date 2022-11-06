@@ -37,18 +37,16 @@ class SehenswürdigkeitLinie{
 class HaltestelleLinie{
 
 }
-class Stadt {
-stadtname
-}
 
+class TicketRoute{}
+Rechnung "1" -- "*" Ticket
 Ticket "*" -- "*" Route
-Route "*" -- "1" Stadt
 Route "*" -- "*" Haltestelle
 Route "*" -- "*" Sehenswürdigkeit
 
 
-(Route,Ticket) .. Rechnung
 (Route,Haltestelle) .. HaltestelleLinie
 (Route,Sehenswürdigkeit) .. SehenswürdigkeitLinie
+(Route,Ticket) .. TicketRoute
 @enduml
 ----
