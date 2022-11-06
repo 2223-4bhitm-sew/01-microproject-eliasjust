@@ -39,7 +39,7 @@ class HaltestelleLinie{
 }
 
 class TicketRoute{}
-Rechnung "1" -- "*" Ticket
+Rechnung "*" -- "1" Ticket
 Ticket "*" -- "*" Route
 Route "*" -- "*" Haltestelle
 Route "*" -- "*" Sehenswürdigkeit
