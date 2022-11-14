@@ -6,10 +6,14 @@ ifndef::imagesdir[:imagesdir: images]
 ----
 @startuml
 left to right direction
-
+class Kunde{
+nachname
+vorname
+geburtsdatum
+}
 class Ticket{
 Ticketstufe
-gultigbis
+gueltigbis
 preis
 }
 
@@ -20,32 +24,20 @@ letztefahrt
 stundentaktung
 }
 class Rechnung{
-ermäßigung
+ermaeßigung
 rechnungsdatum
 
 }
 
-class Haltestelle{
-haltestellenname
-}
-class Sehenswürdigkeit{
-sehenswürdigkeitname
-}
-class SehenswürdigkeitLinie{
 
-}
-class HaltestelleLinie{
 
-}
 
 class TicketRoute{}
 Rechnung "*" -- "1" Ticket
 Ticket "*" -- "*" Route
-Route "*" -- "*" Haltestelle
-Route "*" -- "*" Sehenswürdigkeit
+Kunde "1" -- "*" Rechnung
 
-(Route,Haltestelle) .. HaltestelleLinie
-(Route,Sehenswürdigkeit) .. SehenswürdigkeitLinie
+
 (Route,Ticket) .. TicketRoute
 @enduml
 ----
