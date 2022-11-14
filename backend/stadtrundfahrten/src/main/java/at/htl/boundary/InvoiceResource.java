@@ -65,10 +65,32 @@ public class InvoiceResource {
 
 
     @DELETE
+    @Path("{id}")
+    @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response delete(Invoice invoice){
+    public Response delete(@PathParam("id") long id) {
+        invoiceRepository.delete(id);
         return Response.noContent().build();
     }
+
+    @PUT
+    @Transactional
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(Invoice invoice) {
+        if (invoice.getId() == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+
+        Invoice invoiceToUpdate = invoiceRepository.findById(invoice.getId());
+        if (invoiceToUpdate == null) {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        invoiceToUpdate.setDate(invoice.getDate());
+        invoiceRepository.save(invoiceToUpdate);
+        return Response.noContent().build();
+    }
+
+
 
 
 }
