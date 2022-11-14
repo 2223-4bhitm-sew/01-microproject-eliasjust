@@ -80,15 +80,17 @@ public class InvoiceResource {
         if (invoice.getId() == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-
         Invoice invoiceToUpdate = invoiceRepository.findById(invoice.getId());
         if (invoiceToUpdate == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         invoiceToUpdate.setDate(invoice.getDate());
+        invoiceToUpdate.setDiscount(invoice.getDiscount());
         invoiceRepository.save(invoiceToUpdate);
         return Response.noContent().build();
     }
+
+
 
 
 
