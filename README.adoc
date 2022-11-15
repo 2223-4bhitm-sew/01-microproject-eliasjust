@@ -3,51 +3,9 @@ ifndef::imagesdir[:imagesdir: images]
 = Stadtrundfahrt
 
 
-== Beschreibung
+== ERD
 
-
-
-[plantuml, class-diagram, svg]
-----
-@startuml
-left to right direction
-class Kunde{
-nachname
-vorname
-geburtsdatum
-}
-class Ticket{
-Ticketstufe
-gueltigbis
-preis
-}
-
-class Route{
-dauer
-erstefahrt
-letztefahrt
-stundentaktung
-}
-class Rechnung{
-ermaeßigung
-rechnungsdatum
-
-}
-
-
-
-
-class TicketRoute{}
-Rechnung "*" -- "1" Ticket
-Ticket "*" -- "*" Route
-Kunde "1" -- "*" Rechnung
-
-
-(Route,Ticket) .. TicketRoute
-@enduml
-----
-
-
+https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/
 
 
 == Changelog
