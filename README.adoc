@@ -1,0 +1,57 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Stadtrundfahrt
+
+
+== Beschreibung
+
+
+
+[plantuml, class-diagram, svg]
+----
+@startuml
+left to right direction
+class Kunde{
+nachname
+vorname
+geburtsdatum
+}
+class Ticket{
+Ticketstufe
+gueltigbis
+preis
+}
+
+class Route{
+dauer
+erstefahrt
+letztefahrt
+stundentaktung
+}
+class Rechnung{
+ermaeßigung
+rechnungsdatum
+
+}
+
+
+
+
+class TicketRoute{}
+Rechnung "*" -- "1" Ticket
+Ticket "*" -- "*" Route
+Kunde "1" -- "*" Rechnung
+
+
+(Route,Ticket) .. TicketRoute
+@enduml
+----
+
+
+
+
+== Changelog
+12.11.2022:: added GET POST DELETE PUT API
+15.11.2022:: created Readme.adoc
+
+
