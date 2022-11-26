@@ -1,7 +1,13 @@
 ifndef::imagesdir[:imagesdir: images]
 
 = Stadtrundfahrt
-
+== Beschreibung
+Programm zum kaufen von Stadt Rundfahrt Tickets
+== Userstories
+- Als Tourist möchte ich Tickets kaufen.
+- Als Tourismusanbieter möchte ich unterschiedliche Routen mit unterschiedlichen Sehehnswürdigkeiten anbieten.
+- Als Tourismusanbieter möchte ich Tickets mit verschiedenen Ticketstufen, die bestimmte Routen beinhalten, verkaufen.
+- Als Tourismusanbieter möchte ich Rabatte auf Tickets geben können.
 
 == ERD
 
