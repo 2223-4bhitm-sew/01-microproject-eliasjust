@@ -10,7 +10,7 @@ Programm zum kaufen von Stadt Rundfahrt Tickets
 - Als Tourismusanbieter möchte ich Tickets mit verschiedenen Ticketstufen, die bestimmte Routen beinhalten, verkaufen.
 - Als Tourismusanbieter möchte ich Rabatte auf Tickets geben können.
 
-== ERD
+== CLD
 image::https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/images/class-diagram.svg[svg]
 
 == Changelog
