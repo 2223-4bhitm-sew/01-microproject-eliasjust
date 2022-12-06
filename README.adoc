@@ -11,9 +11,7 @@ Programm zum kaufen von Stadt Rundfahrt Tickets
 - Als Tourismusanbieter möchte ich Rabatte auf Tickets geben können.
 
 == ERD
-
-https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/
-
+img::https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/images/class-diagram.svg[svg]
 
 == Changelog
 12.11.2022:: added GET POST DELETE PUT API
