@@ -2,16 +2,6 @@ package at.htl.entity;
 
 import javax.persistence.*;
 import java.util.Date;
-@NamedQueries({
-        @NamedQuery(
-                name = "Invoice.findAll",
-                query = "select i from Invoice i"
-        ),
-        @NamedQuery(
-                name = "Invoice.findByDate",
-                query = "select i from Invoice i where i.date = :DATE"
-        )
-})
 @Entity
 @Table(name = "MY_INVOICE")
 public class Invoice {
@@ -23,6 +13,8 @@ public class Invoice {
     private Date date;
     @Column(name = "I_DISCOUNT")
     private double discount;
+
+
 
     public Invoice(Date date, double discount) {
         this.date = date;
