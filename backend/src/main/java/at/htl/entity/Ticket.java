@@ -10,6 +10,16 @@ public class Ticket {
 
     private Date dateOfExpiry;
     private double price;
+    @ManyToOne
+    private Invoice invoice;
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
 
     public Long getId() {
         return id;
@@ -30,4 +40,6 @@ public class Ticket {
     public void setPrice(double price) {
         this.price = price;
     }
+
+
 }

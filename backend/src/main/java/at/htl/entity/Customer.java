@@ -10,22 +10,17 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany
-    private List<Invoice> invoices;
+
 
     private String vname;
     private String nname;
     private String email;
 
 
-
-
-    public List<Invoice> getInvoices() {
-        return invoices;
-    }
-
-    public void setInvoices(List<Invoice> invoices) {
-        this.invoices = invoices;
+    public Customer(String vname, String nname, String email) {
+        this.vname = vname;
+        this.nname = nname;
+        this.email = email;
     }
 
     public String getVname() {
@@ -58,4 +53,5 @@ public class Customer {
 
     public Customer() {
     }
+
 }

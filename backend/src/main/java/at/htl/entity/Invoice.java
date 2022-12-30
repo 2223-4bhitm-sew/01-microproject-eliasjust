@@ -2,6 +2,8 @@ package at.htl.entity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
+
 @Entity
 public class Invoice {
     @Id
@@ -10,7 +12,17 @@ public class Invoice {
     private Date date;
     private double discount;
 
+    @ManyToOne
+    private Customer customer;
 
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Invoice(Date date, double discount) {
         this.date = date;
@@ -41,4 +53,5 @@ public class Invoice {
     public void setDiscount(double discount) {
         this.discount = discount;
     }
+
 }

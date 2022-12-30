@@ -20,6 +20,7 @@ public class CustomerResource {
 
     @GET
     public List<Customer> findAll(){
+
         return customerRepository.findAll().list();
 
     }

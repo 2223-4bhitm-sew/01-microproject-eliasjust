@@ -43,16 +43,19 @@ public class TicketResource {
     @PUT
     @Path("/{id}")
     @Transactional
-    public Ticket update(@PathParam("id") Long id, Ticket ticket) {
+    public Response update(@PathParam("id") Long id, Ticket ticket) {
         var entity = ticketRepository.findById(id);
         if (entity == null){
-            logger.error("ticket not found",new NotFoundException());
-            throw new NotFoundException();
+            logger.info("ticket not found: " + id+" will be created");
+            return create(ticket);
+        }else {
+            entity.setPrice(ticket.getPrice());
+            entity.setDateOfExpiry(ticket.getDateOfExpiry());
+            entity.setInvoice(ticket.getInvoice());
+            logger.info("ticket updated: "+entity.getId());
+            return Response.ok().build();
         }
-        entity.setPrice(ticket.getPrice());
-        entity.setDateOfExpiry(ticket.getDateOfExpiry());
-        logger.info("ticket updated: "+entity.getId());
-        return entity;
+
     }
 
     @DELETE
@@ -60,6 +63,10 @@ public class TicketResource {
     @Transactional
     public Response delete(@PathParam("id") Long id) {
         var entity = ticketRepository.findById(id);
+        if(entity==null){
+            logger.error("no ticket",new NotFoundException());
+            throw new NotFoundException();
+        }
         ticketRepository.delete(entity);
         logger.info("ticket deleted: " + entity.getId());
         return Response.ok().build();

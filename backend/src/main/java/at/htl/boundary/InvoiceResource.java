@@ -1,5 +1,6 @@
 package at.htl.boundary;
 
+import at.htl.control.CustomerRepository;
 import at.htl.control.InvoiceRepository;
 import at.htl.entity.Invoice;
 import org.jboss.logging.Logger;
@@ -23,6 +24,8 @@ public class InvoiceResource {
 
     @Inject
     InvoiceRepository invoiceRepository;
+    @Inject
+    CustomerRepository customerRepository;
 
     @GET
     public List<Invoice> findAll() {
@@ -39,6 +42,10 @@ public class InvoiceResource {
     @POST
     @Transactional
     public Response create(Invoice invoice, @Context UriInfo uriInfo) {
+        if (customerRepository.findById(invoice.getCustomer().getId()) == null){
+            logger.error("customer not found");
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
         invoiceRepository.persist(invoice);
         logger.info("Invoice created: " + invoice.getId());
         return Response.created(URI.create(uriInfo.getPath()+"/"+invoice.getId())).build();
@@ -55,6 +62,7 @@ public class InvoiceResource {
         }
         entity.setDate(invoice.getDate());
         entity.setDiscount(invoice.getDiscount());
+        invoice.setCustomer(invoice.getCustomer());
         logger.info("Invoice updated: " + entity.getId());
         return entity;
     }
