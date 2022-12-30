@@ -8,20 +8,19 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    private Date validUntil;
+    private Date dateOfExpiry;
     private double price;
 
     public Long getId() {
         return id;
     }
 
-    public Date getValidUntil() {
-        return validUntil;
+    public Date getDateOfExpiry() {
+        return dateOfExpiry;
     }
 
-    public void setValidUntil(Date validUntil) {
-        this.validUntil = validUntil;
+    public void setDateOfExpiry(Date dateOfExpiry) {
+        this.dateOfExpiry = dateOfExpiry;
     }
 
     public double getPrice() {

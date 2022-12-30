@@ -71,3 +71,23 @@ DELETE localhost:8080/invoice/1
 ###Ticket
 GET localhost:8080/ticket
 ###
+GET localhost:8080/ticket/1
+###
+POST localhost:8080/ticket
+Content-Type: application/json
+
+{
+  "dateOfExpiry": "2022-01-02",
+  "price": 10.00
+
+}
+###
+PUT localhost:8080/ticket/2
+Content-Type: application/json
+
+{
+  "dateOfExpiry": "2022-01-03",
+  "price": 12.00
+
+
+}

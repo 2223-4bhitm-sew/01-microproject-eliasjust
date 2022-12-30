@@ -44,21 +44,6 @@ public class InvoiceResource {
         return Response.created(URI.create(uriInfo.getPath()+"/"+invoice.getId())).build();
     }
 
-
-    @DELETE
-    @Path("/{id}")
-    @Transactional
-    public Response delete(@PathParam("id") Long id) {
-        var entity = invoiceRepository.findById(id);
-        if (entity == null) {
-            logger.error("Invoice not found: " + id);
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-        invoiceRepository.delete(entity);
-        logger.info("Invoice deleted: " + entity.getId());
-        return Response.ok().build();
-    }
-
     @PUT
     @Transactional
     @Path("/{id}")
@@ -74,9 +59,17 @@ public class InvoiceResource {
         return entity;
     }
 
-
-
-
-
-
+    @DELETE
+    @Path("/{id}")
+    @Transactional
+    public Response delete(@PathParam("id") Long id) {
+        var entity = invoiceRepository.findById(id);
+        if (entity == null) {
+            logger.error("Invoice not found: " + id);
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        invoiceRepository.delete(entity);
+        logger.info("Invoice deleted: " + entity.getId());
+        return Response.ok().build();
+    }
 }
