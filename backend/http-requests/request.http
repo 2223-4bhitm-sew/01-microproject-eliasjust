@@ -1,0 +1,73 @@
+
+
+
+###Customer
+
+GET localhost:8080/invoice
+
+
+###
+
+GET localhost:8080/customer
+
+###
+###
+GET localhost:8080/customer/1
+Content-Type: application/json
+
+{
+  "vname": "Max",
+  "nname": "Muster",
+  "email": "max@muster.com"
+}
+
+
+###
+
+POST localhost:8080/customer
+Content-Type: application/json
+
+{
+"vname": "Max",
+"nname": "Mustermann",
+"email": "max@mustermann.com"
+}
+
+###
+PUT localhost:8080/customer/1
+Content-Type: application/json
+
+{
+  "vname": "Max",
+  "nname": "Muster",
+  "email": "max@muster.com"
+}
+
+
+###Invoice
+GET localhost:8080/invoice
+###
+GET localhost:8080/invoice/1
+###
+POST localhost:8080/invoice
+Content-Type: application/json
+
+{
+  "date": "2022-01-01",
+  "discount": 0.0
+
+}
+###
+PUT localhost:8080/invoice/1
+Content-Type: application/json
+
+{
+  "date": "2022-01-02",
+  "discount": 1.0
+}
+###
+DELETE localhost:8080/invoice/1
+
+###Ticket
+GET localhost:8080/ticket
+###

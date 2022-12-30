@@ -1,16 +1,10 @@
 package at.htl.entity;
 
-import net.bytebuddy.dynamic.scaffold.MethodGraph;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @Entity
 public class Customer {
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +13,7 @@ public class Customer {
     @OneToMany
     private List<Invoice> invoices;
 
-    private String vorname;
+    private String vname;
     private String nname;
     private String email;
 
@@ -34,12 +28,12 @@ public class Customer {
         this.invoices = invoices;
     }
 
-    public String getVorname() {
-        return vorname;
+    public String getVname() {
+        return vname;
     }
 
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
+    public void setVname(String vname) {
+        this.vname = vname;
     }
 
     public String getNname() {

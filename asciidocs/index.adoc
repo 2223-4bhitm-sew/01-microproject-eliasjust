@@ -12,17 +12,11 @@ vorname
 geburtsdatum
 }
 class Ticket{
-Ticketstufe
 gueltigbis
 preis
 }
 
-class Route{
-dauer
-erstefahrt
-letztefahrt
-stundentaktung
-}
+
 class Rechnung{
 ermaeßigung
 rechnungsdatum
@@ -32,12 +26,9 @@ rechnungsdatum
 
 
 
-class TicketRoute{}
-Rechnung "*" -- "1" Ticket
-Ticket "*" -- "*" Route
+Rechnung "1" -- "*" Ticket
 Kunde "1" -- "*" Rechnung
 
 
-(Route,Ticket) .. TicketRoute
 @enduml
 ----
