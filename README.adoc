@@ -15,5 +15,8 @@ image::https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/images/class-
 == Changelog
 12.11.2022:: added GET POST DELETE PUT API
 15.11.2022:: created Readme.adoc
+30.12.2022:: updated to panache
+30.12.2022:: implemented all entities
+30.12.2022:: added http-requests
 
 
