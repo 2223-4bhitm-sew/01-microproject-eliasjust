@@ -1,0 +1,34 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Stadtrundfahrt
+
+[plantuml, class-diagram, svg]
+----
+@startuml
+left to right direction
+class Kunde{
+nachname
+vorname
+geburtsdatum
+}
+class Ticket{
+gueltigbis
+preis
+}
+
+
+class Rechnung{
+ermaeßigung
+rechnungsdatum
+
+}
+
+
+
+
+Rechnung "1" -- "*" Ticket
+Kunde "1" -- "*" Rechnung
+
+
+@enduml
+----
