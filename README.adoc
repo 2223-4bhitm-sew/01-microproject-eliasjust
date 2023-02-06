@@ -1,0 +1,22 @@
+ifndef::imagesdir[:imagesdir: images]
+
+= Stadtrundfahrt
+== Beschreibung
+Programm zum kaufen von Stadt Rundfahrt Tickets
+== Userstories
+- Als Tourist möchte ich Tickets kaufen.
+- Als Tourist möchte ich mir meine Tickets anzeigen lassen.
+- Als Tourismusanbieter möchte ich Rabatte auf Tickets geben können.
+- Als Tourismusanbieter möchte ich den Umsatz mit dem Ticketverkauf ausrechnen
+
+== CLD
+image::https://2223-4bhitm-sew.github.io/01-microproject-eliasjust/images/class-diagram.svg[svg]
+
+== Changelog
+12.11.2022:: added GET POST DELETE PUT API
+15.11.2022:: created Readme.adoc
+30.12.2022:: updated to panache
+30.12.2022:: implemented all entities
+30.12.2022:: added http-requests
+
+
