@@ -9,9 +9,6 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
-
-
     private String vname;
     private String nname;
     private String email;

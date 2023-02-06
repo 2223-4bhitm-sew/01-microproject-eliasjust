@@ -2,16 +2,12 @@
 
 
 ###Customer
-
-
-
-
 ###
 
 GET localhost:8080/customer
 
 ###
-GET localhost:8080/customer/1
+GET localhost:8080/customer/3
 
 ###
 
